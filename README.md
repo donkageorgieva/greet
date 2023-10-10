@@ -16,20 +16,18 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone this repository to your local machine using [Git](https://git-scm.com/):
 
-   ```bash
-   git clone https://github.com/donkageorgieva/greet.git
-   ```
+```bash
+ git clone https://github.com/donkageorgieva/greet.git
+```
 
 2. Install the project dependencies using npm:
 
 ```
-npm install
-
+ npm install
 ```
 
 ### Running The Project
 
 ```
 npm run dev
-
 ```
