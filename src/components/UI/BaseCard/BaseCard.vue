@@ -7,7 +7,8 @@ export default {
     imgSrc: String,
     name: String,
     description: String,
-    category: String,
+    category: Array,
+    price: Number,
   },
   methods: {
     onAddToCart() {
@@ -15,18 +16,67 @@ export default {
 cart=5589.`;
     },
   },
+  computed: {
+    formatCategory() {
+      let reformatedCategories = [];
+      for (const oneCategory in this.category) {
+        reformatedCategories.push(this.category[oneCategory].name);
+      }
+      return reformatedCategories.join(" ");
+    },
+    formattedPrice() {
+      return this.price + "BGN";
+    },
+  },
 };
 </script>
 
 <template>
-  <article>
-    <img :src="imgSrc" />
-    <h2>{{ name }}</h2>
-    <h4>{{ category }}</h4>
-    <span v-html="description"></span>
-
-    <base-button @onClick="onAddToCart">My text</base-button>
+  <article class="card">
+    <img :src="imgSrc" class="card__img" />
+    <div class="card__body">
+      <h2 v-html="name"></h2>
+      <h4>{{ formatCategory }}</h4>
+      <span v-html="description"></span>
+      <p>{{ formattedPrice }}</p>
+      <base-button @onClick="onAddToCart">My text</base-button>
+    </div>
   </article>
 </template>
 
-<style scoped></style>
+<style scoped>
+.card {
+  max-width: 20%;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 2rem;
+}
+.card__body {
+  padding: 0rem 2rem 0rem;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
+}
+.card__img {
+  height: 20rem;
+  object-fit: cover;
+  object-position: 100% 20%;
+
+  vertical-align: middle;
+}
+@media (min-width: 40rem) {
+  .card {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .card {
+    width: 30%;
+  }
+}
+</style>
