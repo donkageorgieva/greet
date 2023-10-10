@@ -39,7 +39,9 @@ cart=5589.`;
       <h4>{{ formatCategory }}</h4>
       <span v-html="description"></span>
       <p>{{ formattedPrice }}</p>
-      <base-button @onClick="onAddToCart">My text</base-button>
+    </div>
+    <div class="card__footer">
+      <base-button @onClick="onAddToCart">Add to Cart</base-button>
     </div>
   </article>
 </template>
@@ -55,11 +57,14 @@ cart=5589.`;
   flex-direction: column;
   overflow: hidden;
   margin: 2rem;
+  height: 100%;
+  height: 40rem;
 }
 .card__body {
   padding: 0rem 2rem 0rem;
-  /* overflow-x: hidden;
-  overflow-y: scroll; */
+  max-height: 30rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .card__img {
   height: 20rem;
@@ -67,6 +72,12 @@ cart=5589.`;
   object-position: 100% 20%;
 
   vertical-align: middle;
+}
+.card__footer {
+  padding: 1rem;
+  text-align: center;
+  position: relative; /* Make the footer relative to its parent .card */
+  margin-top: auto;
 }
 @media (min-width: 40rem) {
   .card {

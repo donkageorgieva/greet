@@ -19,7 +19,7 @@ export default {
     :options="['name', 'price']"
     @change="onChangeOrder"
   ></dropdown>
-  <section>
+  <section class="container">
     <base-card
       v-for="data in cardData"
       :key="data.id"

@@ -35,4 +35,18 @@ export default {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.select {
+  display: flex;
+
+  align-items: start;
+}
+label {
+  font-size: 20px;
+  margin-right: 0.5rem;
+}
+select {
+  padding: 0.5rem 1.5rem;
+  font-size: 20px;
+}
+</style>

@@ -12,6 +12,7 @@ export default {
       greetData: [],
       page: 1,
       isLoading: false,
+      categories: [],
     };
   },
 
@@ -85,12 +86,17 @@ export default {
 
 <template>
   <main>
-    <h1>Greet App</h1>
-    <div ref="pageRef" class="container">
+    <div ref="pageRef" class="main">
       <card-grid v-if="greetData.length > 0" :cardData="greetData"></card-grid>
       <h1 v-if="isLoading">Loading...</h1>
     </div>
   </main>
 </template>
 
-<style></style>
+<style scoped>
+.main {
+  padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+</style>
