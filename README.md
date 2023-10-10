@@ -22,12 +22,14 @@ Before you begin, ensure you have met the following requirements:
 
 2. Install the project dependencies using npm:
 
-```npm install
+```
+npm install
 
 ```
 
 ### Running The Project
 
-```npm run dev
+```
+npm run dev
 
 ```
