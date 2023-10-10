@@ -20,7 +20,13 @@ Before you begin, ensure you have met the following requirements:
  git clone https://github.com/donkageorgieva/greet.git
 ```
 
-2. Install the project dependencies using npm:
+2. Cd into the project directory:
+
+```
+ cd greet
+```
+
+3. Install the project dependencies using npm:
 
 ```
  npm install
