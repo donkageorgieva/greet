@@ -1,10 +1,19 @@
 <script>
+import BaseButton from "../BaseButton/BaseButton.vue";
+
 export default {
+  components: { BaseButton },
   props: {
     imgSrc: String,
     name: String,
     description: String,
     category: String,
+  },
+  methods: {
+    onAddToCart() {
+      window.location.href = `https://greet.bg/?add-to-
+cart=5589.`;
+    },
   },
 };
 </script>
@@ -16,7 +25,7 @@ export default {
     <h4>{{ category }}</h4>
     <span v-html="description"></span>
 
-    <button>Add to Cart</button>
+    <base-button @onClick="onAddToCart">My text</base-button>
   </article>
 </template>
 
